@@ -18,7 +18,7 @@ domains_file.close()
 
 def whoischeck():
 
-	#write file
+	#appends! to file
 	free_domains = open('free_domains.txt', 'a')
 
 	#print the time
@@ -43,6 +43,12 @@ def whoischeck():
 #do as long as your list is not empty
 while len(domains) > 0:
 	whoischeck()
+	print(len(domains))
+	
+	#if starting domain list is > 40 then exit script
+	if len(domains) == 0:
+		break
+	
 	print("---- BREAK ----")
 	#do a break before checking the next 40 again, otherwise they give you wrong answers.
 	time.sleep(600)
